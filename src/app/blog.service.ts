@@ -5,6 +5,7 @@ import { BlogPost, User } from './blog-post.interface';
   providedIn: 'root',
 })
 export class BlogService {
+
   private users: User[] = [
     {
       id: 1,
@@ -48,4 +49,7 @@ export class BlogService {
       userId: 1
     }
   ];
+  getPosts(): BlogPost[] {
+    return [...this.blogPosts];
+  }
 }
