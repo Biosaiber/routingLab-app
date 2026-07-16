@@ -14,5 +14,6 @@ export class App {
   private blogService = inject(BlogService)
   constructor() {
     console.log(this.blogService.getPosts());
+    console.log(this.blogService.getBlogPostById(1));
   }
 }
