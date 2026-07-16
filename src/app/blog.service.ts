@@ -66,10 +66,13 @@ export class BlogService {
   getPosts(): BlogPost[] {
     return [...this.blogPosts];
   }
-  getBlogPostById(id: number): BlogPost {
+  getPostById(id: number): BlogPost {
     return this.blogPosts.find(post => post.id === id) || this.defaultBlogPost;
   }
   getUserById(id: number): User {
     return this.users.find(user => user.id === id) || this.defaultUser;
+  }
+  getPostsByUserId(userId: number): BlogPost[] {
+    return this.blogPosts.filter(post => post.userId === userId);
   }
 }
