@@ -43,7 +43,6 @@ export class BlogService {
           userId: 1,
           content: `Ukraine's battlefield experience, advanced drone capabilities, and resilient defence industry could significantly strengthen Europe's collective security and military readiness in the years ahead.`,
           datePosted: new Date(2026, 6, 17),
-
         }
       ],
       userId: 1
@@ -59,10 +58,18 @@ export class BlogService {
     comments: [],
     userId: 0
   };
+  private defaultUser: User = {
+    id: 0,
+    username: 'Unknown',
+    bio: 'No biography available.'
+  }
   getPosts(): BlogPost[] {
     return [...this.blogPosts];
   }
   getBlogPostById(id: number): BlogPost {
     return this.blogPosts.find(post => post.id === id) || this.defaultBlogPost;
+  }
+  getUserById(id: number): User {
+    return this.users.find(user => user.id === id) || this.defaultUser;
   }
 }

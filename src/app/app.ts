@@ -15,5 +15,6 @@ export class App {
   constructor() {
     console.log(this.blogService.getPosts());
     console.log(this.blogService.getBlogPostById(1));
+    console.log(this.blogService.getUserById(1));
   }
 }
