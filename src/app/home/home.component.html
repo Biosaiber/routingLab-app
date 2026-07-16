@@ -1,0 +1,8 @@
+@for (post of posts; track post.id) {
+    <div class="post">
+        <h3> <a [routerLink]="['/post', post.id]">{{post.title}}</a></h3>
+        <small>{{post.dateCreated}}</small>
+        <p>{{post.snippet}}</p>
+
+    </div>
+}

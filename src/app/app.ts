@@ -1,11 +1,15 @@
 import { Component, signal, inject } from '@angular/core';
+import { HomeComponent } from './home/home.component';
 import { RouterOutlet } from '@angular/router';
+
 //temporarty
 import { BlogService } from './blog.service';
 
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [HomeComponent, RouterOutlet],
+  standalone: true,
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
