@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
+import { BlogService } from '../blog.service';
+import { BlogPost } from '../blog-post.interface';
 
 @Component({
   selector: 'app-post',
@@ -6,6 +8,13 @@ import { Component } from '@angular/core';
   templateUrl: './post.component.html',
   styleUrl: './post.component.css',
 })
-export class PostComponent {
+export class PostComponent implements OnInit {
+  private blogService = inject(BlogService);
+  @Input() id: number = 0;
+  post!: BlogPost;
+  ngOnInit(): void {
+    const postId = Number(this.id);
+    this.post = this.blogService.getPostById(postId);
+  }
 
 }
