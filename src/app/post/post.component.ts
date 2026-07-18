@@ -2,10 +2,11 @@ import { Component, inject, Input, OnInit } from '@angular/core';
 import { BlogService } from '../blog.service';
 import { BlogPost } from '../blog-post.interface';
 import { User } from '../blog-post.interface';
+import { RouterOutlet, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-post',
-  imports: [],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './post.component.html',
   styleUrl: './post.component.css',
 })

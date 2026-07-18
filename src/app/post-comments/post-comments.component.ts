@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Comment } from '@angular/compiler';
 
 @Component({
   selector: 'app-post-comments',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './post-comments.component.html',
   styleUrl: './post-comments.component.css',
 })
-export class PostComments {
-
+export class PostCommentsComponent {
+  @Input() id: number = 0;
+  comment!: Comment;
 }
