@@ -43,7 +43,23 @@ export class BlogService {
           userId: 1,
           content: `Ukraine's battlefield experience, advanced drone capabilities, and resilient defence industry could significantly strengthen Europe's collective security and military readiness in the years ahead.`,
           datePosted: new Date(2026, 6, 17),
-        }
+        },
+        {
+          id: 2,
+          author: 'Laura',
+          userId: 2,
+          content:
+            "The European Union should continue investing in AI-driven defence systems while maintaining strong ethical standards and international cooperation.",
+          datePosted: new Date(2026, 6, 18),
+        },
+        {
+          id: 3,
+          author: 'Cecil',
+          userId: 4,
+          content:
+            "Cybersecurity will become just as important as traditional military equipment. Protecting digital infrastructure is now a key part of national defence.",
+          datePosted: new Date(2026, 6, 19),
+        },
       ],
       userId: 1
     }

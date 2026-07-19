@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { Comment } from '@angular/compiler';
+import { Component, inject, Input, OnInit } from '@angular/core';
+import { BlogPost } from '../blog-post.interface';
+import { BlogService } from '../blog.service';
 
 @Component({
   selector: 'app-post-comments',
@@ -7,7 +8,14 @@ import { Comment } from '@angular/compiler';
   templateUrl: './post-comments.component.html',
   styleUrl: './post-comments.component.css',
 })
-export class PostCommentsComponent {
+export class PostCommentsComponent implements OnInit {
   @Input() id: number = 0;
-  comment!: Comment;
+  private blogService = inject(BlogService);
+  post!: BlogPost;
+  ngOnInit(): void {
+    const postId = Number(this.id);
+    this.post = this.blogService.getPostById(postId);
+    console.log(postId);
+  }
+
 }
