@@ -3,9 +3,18 @@ import { PostComponent } from './post/post.component';
 import { PostCommentsComponent } from './post-comments/post-comments.component';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { 
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
   {
     path: 'post/:id',
     component: PostComponent,
@@ -19,5 +28,9 @@ export const routes: Routes = [
   {
     path: 'user/:id',
     component: UserComponent
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
   }
 ];
