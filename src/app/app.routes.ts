@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { PostComponent } from './post/post.component';
 import { PostCommentsComponent } from './post-comments/post-comments.component';
 import { HomeComponent } from './home/home.component';
+import { UserComponent } from './user/user.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,5 +15,9 @@ export const routes: Routes = [
         component: PostCommentsComponent
       }
     ]
+  },
+  {
+    path: 'user/:id',
+    component: UserComponent
   }
 ];

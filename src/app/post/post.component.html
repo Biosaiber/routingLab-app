@@ -2,7 +2,7 @@
     <h2>{{ post.title }}</h2>
 
     <small>
-        By <strong>{{ author.username }}</strong> • {{ post.dateCreated }}
+        By <strong><a [routerLink]="['/user',author.id]">{{ author.username }}</a></strong> • {{ post.dateCreated }}
     </small>
 
     <p>{{ post.content }}</p>

@@ -2,7 +2,7 @@
 <div class="comment">
 
     <small>
-        By <strong>{{ comment.author }}</strong> • {{ post.dateCreated }}
+        By <strong><a [routerLink]="['/user',comment.userId]">{{ comment.author }}</a></strong> • {{ post.dateCreated }}
     </small>
     <p>{{comment.content}}</p>
 
