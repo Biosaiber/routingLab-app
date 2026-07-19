@@ -12,4 +12,9 @@ import { RouterLink } from "@angular/router";
 export class HomeComponent {
   private blogService = inject(BlogService);
   posts: BlogPost[] = this.blogService.getPosts();
+  authorName!: String;
+
+  getAuthorName(userId: number): string {
+    return this.blogService.getUserById(userId).username;
+  }
 }
