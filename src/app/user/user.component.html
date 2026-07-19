@@ -1,4 +1,14 @@
 <div class="user">
     <h2>{{user.username}}</h2>
     <p>{{user.bio}}</p>
+    <small>Articles by {{ user.username }}</small>
+    @for (post of userPosts; track post.id) {
+    <div class="post">
+        <h3> <a [routerLink]="['/post', post.id]">{{post.title}}</a></h3>
+        <small>
+            {{ post.dateCreated }}
+        </small>
+        <p>{{post.snippet}}</p>
+    </div>
+    }
 </div>
