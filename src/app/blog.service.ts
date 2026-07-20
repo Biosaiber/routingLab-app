@@ -25,7 +25,12 @@ export class BlogService {
     {
       id: 4,
       username: 'Cecil',
-      bio: 'Passionate about coding and gaming.'
+      bio: 'Passionate about coding and gaming.',
+    },
+    {
+      id: 5,
+      username: 'Danzel',
+      bio: 'Skydiver.',
     }
   ];
   private blogPosts: BlogPost[] = [
@@ -40,7 +45,7 @@ export class BlogService {
         {
           id: 1,
           author: 'Danzel',
-          userId: 1,
+          userId: 5,
           content: `Ukraine's battlefield experience, advanced drone capabilities, and resilient defence industry could significantly strengthen Europe's collective security and military readiness in the years ahead.`,
           datePosted: new Date(2026, 6, 17),
         },
@@ -113,7 +118,7 @@ export class BlogService {
         {
           id: 2,
           author: 'James',
-          userId: 1,
+          userId: 5,
           content: `Battery storage technologies will determine how successful renewable energy projects become over the next decade.`,
           datePosted: new Date(2026, 6, 26),
         },

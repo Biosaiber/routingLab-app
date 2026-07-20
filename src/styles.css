@@ -9,3 +9,17 @@ body {
   padding-left: 16px;
   padding-right: 16px;
 }
+button:hover {
+  cursor: pointer;
+}
+
+button {
+  padding: 7px 14px;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #141414;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}

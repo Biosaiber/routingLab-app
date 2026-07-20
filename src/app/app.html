@@ -1,2 +1,12 @@
-<H1>RoutingLab App</H1>
+<header>
+    <button [routerLink]="['/home']">home</button>
+    <H1>RoutingLab App</H1>
+
+</header>
+
 <router-outlet></router-outlet>
+
+<footer>
+    <button (click)="goBack()">Back</button>
+    <button (click)="goForward()">Forward</button>
+</footer>
