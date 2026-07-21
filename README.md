@@ -1,5 +1,86 @@
 # Angular Routing & Navigation
 
+## Project Notes
+
+> These notes are my personal summary after finishing the Routing
+> module. Their goal is to quickly remind me how Angular Routing works.
+
+------------------------------------------------------------------------
+
+## What I Learned
+
+-   Create routes
+-   Use RouterOutlet
+-   Navigate with routerLink
+-   Navigate programmatically with Router.navigate()
+-   Use Location.back() and Location.forward()
+-   Work with route parameters
+-   Create child routes
+-   Use redirects
+-   Handle 404 pages with wildcard routes
+-   Use withComponentInputBinding()
+
+------------------------------------------------------------------------
+
+## Navigation Flow
+
+``` text
+User action
+    ↓
+routerLink / Router.navigate()
+    ↓
+Angular Router
+    ↓
+URL changes
+    ↓
+Matching route
+    ↓
+Component
+    ↓
+@Input()
+    ↓
+Service
+    ↓
+HTML
+```
+
+------------------------------------------------------------------------
+
+## Key Concepts
+
+-   **RouterOutlet** renders the component that matches the current URL.
+-   **routerLink** is used inside HTML templates.
+-   **Router.navigate()** is used inside TypeScript.
+-   **withComponentInputBinding()** automatically binds route parameters
+    to `@Input()`.
+-   **Wildcard routes** should always be the last route.
+-   **Redirects** send the user to another route.
+-   **Child routes** allow nested navigation.
+
+------------------------------------------------------------------------
+
+## Things I Want to Remember
+
+-   A URL is not only an address. It can also provide data to a
+    component.
+-   The Router does not change the page. It changes the component inside
+    RouterOutlet.
+-   Services store data.
+-   Components decide what should be displayed.
+-   Use `routerLink` in HTML.
+-   Use `Router.navigate()` in TypeScript.
+
+------------------------------------------------------------------------
+
+## Personal Note
+
+Home → Post creates a new `PostComponent`.
+
+Post/1 → Post/2 reuses the existing `PostComponent`, so `ngOnInit()` is
+not executed again.
+
+------------------------------------------------------------------------
+(svk)
 ## Projektové poznámky
 
 > Tieto poznámky som si pripravil po dokončení projektu. Ich cieľom nie
