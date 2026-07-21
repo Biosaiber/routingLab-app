@@ -1,59 +1,160 @@
-# RoutingLabApp
+# Angular Routing & Navigation
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.7.
+## Projektové poznámky
 
-## Development server
+> Tieto poznámky som si pripravil po dokončení projektu. Ich cieľom nie
+> je nahradiť dokumentáciu Angularu, ale pripomenúť, ako Routing funguje.
 
-To start a local development server, run:
+------------------------------------------------------------------------
 
-```bash
-ng serve
+# Čo som sa naučil
+
+-   vytvoriť routes
+-   používať RouterOutlet
+-   používať routerLink
+-   používať Router.navigate()
+-   používať Location.back() a Location.forward()
+-   pracovať s route parametrami
+-   vytvárať child routes
+-   používať redirect
+-   vytvoriť 404 stránku pomocou wildcard route
+-   používať withComponentInputBinding()
+
+------------------------------------------------------------------------
+
+# Tok navigácie
+
+    Klik
+      │
+      ▼
+    routerLink alebo Router.navigate()
+      │
+      ▼
+    Angular Router
+      │
+      ▼
+    URL
+      │
+      ▼
+    Routes
+      │
+      ▼
+    Komponent
+      │
+      ▼
+    @Input()
+      │
+      ▼
+    Service
+      │
+      ▼
+    HTML
+
+------------------------------------------------------------------------
+
+# RouterOutlet
+
+RouterOutlet je miesto, kde Angular zobrazuje komponent podľa aktuálnej
+URL.
+
+------------------------------------------------------------------------
+
+# routerLink
+
+Používam ho v HTML.
+
+``` html
+<a [routerLink]="['/post', post.id]">
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+------------------------------------------------------------------------
 
-## Code scaffolding
+# Router.navigate()
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Používam ho v TypeScripte.
 
-```bash
-ng generate component component-name
+``` ts
+this.router.navigate(['/post', post.id]);
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Použil som ho pri tlačidle Random Post.
 
-```bash
-ng generate --help
-```
+------------------------------------------------------------------------
 
-## Building
+# Route Parameters
 
-To build the project run:
+URL:
 
-```bash
-ng build
-```
+    /post/5
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+↓
 
-## Running unit tests
+    @Input() id
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+↓
 
-```bash
-ng test
-```
+    getPostById(id)
 
-## Running end-to-end tests
+------------------------------------------------------------------------
 
-For end-to-end (e2e) testing, run:
+# withComponentInputBinding()
 
-```bash
-ng e2e
-```
+Automaticky prenesie route parametre do @Input().
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+------------------------------------------------------------------------
 
-## Additional Resources
+# Redirect
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Používam ho na presmerovanie používateľa.
+
+------------------------------------------------------------------------
+
+# Wildcard
+
+Slúži na zachytenie neexistujúcich URL.
+
+Musí byť posledná route.
+
+------------------------------------------------------------------------
+
+# Child Routes
+
+Použil som ich na komentáre článku.
+
+    /post/1/comments
+
+------------------------------------------------------------------------
+
+# Location Service
+
+    back()
+
+vráti používateľa späť.
+
+    forward()
+
+ho posunie dopredu.
+
+------------------------------------------------------------------------
+
+# Čo som si zapamätal
+
+-   URL nie je iba adresa.
+-   URL môže obsahovať údaje pre komponent.
+-   Router nemení stránku. Mení komponent v RouterOutlet.
+-   Service uchováva dáta.
+-   Komponent rozhoduje, čo zobrazí.
+-   routerLink používam v HTML.
+-   Router.navigate() používam v TypeScripte.
+-   withComponentInputBinding() prenesie route parametre do @Input().
+-   Wildcard route patrí vždy na koniec.
+-   Redirect slúži na presmerovanie.
+
+------------------------------------------------------------------------
+
+# Poznámka
+
+Keď idem z Home na Post, Angular vytvorí nový PostComponent.
+
+Keď idem z Post/1 na Post/2, Angular znovu použije existujúci
+PostComponent. Preto sa ngOnInit() nespustí znova.
