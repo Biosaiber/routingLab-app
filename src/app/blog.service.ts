@@ -118,7 +118,7 @@ export class BlogService {
         {
           id: 2,
           author: 'James',
-          userId: 5,
+          userId: 1,
           content: `Battery storage technologies will determine how successful renewable energy projects become over the next decade.`,
           datePosted: new Date(2026, 6, 26),
         },
